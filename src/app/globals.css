@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-vscodedark {
+    background-color: #1e1e1e;
+  }
+  .thumbnail-img {
+    width: 650px;
+    height: 250px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    box-shadow: 4px 5px 12px black;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .thumbnail-img:hover {
+    transform: translate(4px, 5pz);
+    box-shadow: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 見出しの設定 */
+h1 {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+article h2 {
+  border-bottom: 2px solid #bbbaba;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+article h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  padding-left: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  border-left: 3px solid rgb(77, 136, 192);
+}
+
+aside h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+h5 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 0.2;
+}
+
+hr {
+  height: 2px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #9b9a9a;
+}
+
+/* リストの設定 */
+article ol li {
+  list-style-type: none;
+  counter-increment: cnt;
+}
+
+article ol li::before {
+  content: counter(cnt) ". ";
+}
+
+article li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* aside nav ol {
+  margin-top: 5px;
+} */
+
+ul {
+  list-style: disc;
+  padding-left: 19px;
+}
+
+aside ul {
+  list-style: none;
+  border-bottom: 1px dashed #000;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ul:not(.toc-list),
+ol:not(.toc-list) {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+ol.toc-list {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 引用の設定 */
+blockquote {
+  position: relative;
+  padding: 10px 15px 10px 60px;
+  box-sizing: border-box;
+  font-style: italic;
+  background: #f5f5f5;
+  color: #777777;
+  border-left: 4px solid #9dd4ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+blockquote:before {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  content: "e8dc";
+  font-family: "Material Icons Round";
+  color: #9dd4ff;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+blockquote p {
+  padding: 0;
+  margin: 7px 0;
+  line-height: 1.7;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  color: #888888;
+  font-size: 0.9em;
+}
+
+/* テーブルの設定 */
+table {
+  width: 100%;
+  table-layout: auto; /* セルの内容に基づいて幅を自動調整 */
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  counter-reset: num;
+}
+
+th,
+td {
+  min-width: 50px; /* 例として最低限の幅を50pxに設定 */
+  max-width: 30rem;
+  border: 1px solid #686767;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 1300px) {
+  th,
+  td {
+    max-width: 100px;
+    border: 1px solid #686767;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+th {
+  background-color: #dadada; /* ヘッダーセルの背景色を設定 */
+}
+
+span.numbering::before {
+  counter-increment: num;
+  content: counter(num);
+  text-align: center;
+}
+
+/* 画像のキャプション設定 */
+figcaption {
+  font-size: 12px;
+  color: #898a8a;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* ブログのコールアウト設定 */
+/* p {
+  > span.callout {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 10px 10px 10px;
+    border-radius: 8px;
+    font-size: 16px;
+
+    &::before {
+      position: relative;
+      top: -4px;
+      transform: scale(0.6);
+    }
+
+    &.memo {
+      background-color: #e8f3d6;
+      &::before {
+        content: url("../../public/memo.png");
+      }
+    }
+
+    &.caution {
+      background-color: #f3d6d6;
+      &::before {
+        content: url("../../public/caution.png");
+      }
+    }
+  }
+} */
+
+p > span.callout {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+p > span.callout::before {
+  position: relative;
+  top: -4px;
+  transform: scale(0.6);
+}
+
+p > span.callout.information {
+  background-color: #a7c8e4;
+}
+
+p > span.callout.information::before {
+  content: url("../../public/information.png");
+}
+
+p > span.callout.memo {
+  background-color: #e8f3d6;
+}
+
+p > span.callout.memo::before {
+  content: url("../../public/memo.png");
+}
+
+p > span.callout.caution {
+  background-color: #eef3bd;
+}
+
+p > span.callout.caution::before {
+  content: url("../../public/caution.png"); /* caution.svgが存在すると仮定しています */
+}
+
+/* 行間設定 */
+p {
+  margin: 15px 0;
+}
+
+code span.linenumber {
+  color: #7c7a7a !important;
+}
+
+/* 目次の設定 */
+.toc {
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.toc-list .toc-list {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.toc-list-item {
+  padding-bottom: 0rem;
+}
+
+.toc-list-item:last-child {
+  padding-bottom: 0;
+}
+
+.toc-link {
+  color: rgba(156, 163, 175, 0.7);
+}
+
+.is-active-link {
+  color: #282828;
+  font-weight: 700;
+}
+
+div .sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  /* top: 20px; */
+}
+
+code span.linenumber {
+  border-right: 1px solid #999;
+  display: block;
+  margin-right: 10px;
+}
+
+code:not([class]) {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #494949;
+  padding: 2px 4px;
+  display: inline;
+  background-color: #dbdbdb;
+  font-size: 14px;
+}
+
+a[target] {
+  color: #0004ff;
+}
+
+a[target]:hover {
+  text-decoration: underline;
+}
