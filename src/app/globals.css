@@ -335,7 +335,7 @@ code:not([class]) {
   border: 1px solid #ccc;
   border-radius: 8px;
   color: #494949;
-  padding: 2px 4px;
+  padding: 0 4px;
   display: inline;
   background-color: #dbdbdb;
   font-size: 14px;
@@ -347,4 +347,9 @@ a[target] {
 
 a[target]:hover {
   text-decoration: underline;
+}
+
+[aria-label]:hover {
+  background-color: #6d6d6d;
+  transition-duration: 300ms;
 }

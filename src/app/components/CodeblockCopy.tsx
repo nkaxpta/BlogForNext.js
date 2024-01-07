@@ -47,7 +47,7 @@ const CodeblockCopy = ({ language, code, filename }: CodeProps) => {
           aria-label="copy"
           size="small"
           onClick={handleCopy}
-          className="hover:bg-slate-600 duration-300"
+          // className="hover:bg-slate-600 duration-300"
         >
           {isCopied ? (
             <CheckRoundedIcon

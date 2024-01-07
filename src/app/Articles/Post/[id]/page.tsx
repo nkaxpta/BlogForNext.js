@@ -4,6 +4,7 @@ import { Back } from "@/app/components/Back";
 import BlogCategory from "@/app/components/BlogCategory";
 import Profile from "@/app/components/ProfileAside";
 import Outline from "@/app/components/Outline";
+import { Metadata } from "next";
 
 export const generateStaticParams = async () => {
   const { contents } = await getArticlesList();
@@ -17,13 +18,23 @@ export const generateMetadata = async ({
   params,
 }: {
   params: { id: string };
-}) => {
+}): Promise<Metadata> => {
   const article = await getDetailArticle(params.id);
+
+  // console.log("url：%s", process.env.BLOG_DOMAIN);
 
   // サイト説明は概要内の最初の一文
   return {
+    metadataBase: new URL(
+      `https://${process.env.BLOG_DOMAIN}` || "localhost:3000"
+    ),
     title: article.title,
     description: article.content.split("</h2><p>")[1].split("</p>")[0],
+    openGraph: {
+      title: article.title,
+      description: article.content.split("</h2><p>")[1].split("</p>")[0],
+      url: `https://${process.env.BLOG_DOMAIN}/Articles/Post/${article.id}/`,
+    },
   };
 };
 
