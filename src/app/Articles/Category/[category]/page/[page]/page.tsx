@@ -86,7 +86,7 @@ const blogCategoryPageList = async ({
           Category Posts : {categoryName}
         </h2>
         <article className="grid md:grid-cols-1 lg:grid-cols-2 gap-10 sm:px-14 md:px-0">
-          {articles.map((article) => (
+          {articles.map((article: Article) => (
             <ArticleItem key={article.id} article={article} />
           ))}
         </article>

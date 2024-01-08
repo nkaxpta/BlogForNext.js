@@ -4,6 +4,7 @@ import { Pagination } from "@/app/components/Pagination";
 import Profile from "@/app/components/ProfileAside";
 import { Metadata } from "next";
 import ArticleItem from "@/app/components/ArticleItem";
+import { Article } from "../../../../../lib/type";
 
 export const metadata: Metadata = {
   title: "All Posts",
@@ -35,7 +36,7 @@ const blogPageList = async ({ params }: { params: { page: number } }) => {
       <div className="flex-grow flex-col w-full md:w-2/3 items-center">
         <h2 className="text-2xl my-8 text-center">All Posts</h2>
         <article className="grid md:grid-cols-1 lg:grid-cols-2 gap-10 sm:px-14 md:px-0">
-          {xArticlesList.map((article) => (
+          {xArticlesList.map((article: Article) => (
             <ArticleItem key={article.id} article={article} />
           ))}
         </article>

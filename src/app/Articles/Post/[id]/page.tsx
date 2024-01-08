@@ -5,11 +5,12 @@ import BlogCategory from "@/app/components/BlogCategory";
 import Profile from "@/app/components/ProfileAside";
 import Outline from "@/app/components/Outline";
 import { Metadata } from "next";
+import { Article as ArticleType } from "../../../../../lib/type";
 
 export const generateStaticParams = async () => {
   const { contents } = await getArticlesList();
 
-  return contents.map((article) => ({
+  return contents.map((article: ArticleType) => ({
     id: article.id,
   }));
 };
@@ -41,7 +42,7 @@ export const generateMetadata = async ({
 // paramsはurlのid部分を出力する
 const Page = async ({ params }: { params: { id: string } }) => {
   // console.log(params);
-  const article = await getDetailArticle(params.id);
+  const article: ArticleType = await getDetailArticle(params.id);
   // console.log(article);
   // console.log(article.content);
 
