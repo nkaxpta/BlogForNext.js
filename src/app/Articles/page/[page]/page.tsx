@@ -1,10 +1,10 @@
-import { getArticleByPage, getNumberOfPages } from "../../../../../lib/client";
-import BlogCategory from "@/app/components/BlogCategory";
-import { Pagination } from "@/app/components/Pagination";
-import Profile from "@/app/components/ProfileAside";
+import { getArticleByPage, getNumberOfPages } from "~/lib/client";
+import BlogCategory from "@/components/BlogCategory";
+import { Pagination } from "@/components/Pagination";
+import Profile from "@/components/ProfileAside";
 import { Metadata } from "next";
-import ArticleItem from "@/app/components/ArticleItem";
-import { Article } from "../../../../../lib/type";
+import ArticleItem from "@/components/ArticleItem";
+import { Article } from "~/lib/type";
 
 export const metadata: Metadata = {
   title: "All Posts",

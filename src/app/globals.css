@@ -263,7 +263,7 @@ p > span.callout.information {
 }
 
 p > span.callout.information::before {
-  content: url("../../public/information.png");
+  content: url("~/public/information.png");
 }
 
 p > span.callout.memo {
@@ -271,7 +271,7 @@ p > span.callout.memo {
 }
 
 p > span.callout.memo::before {
-  content: url("../../public/memo.png");
+  content: url("~/public/memo.png");
 }
 
 p > span.callout.caution {
@@ -279,7 +279,7 @@ p > span.callout.caution {
 }
 
 p > span.callout.caution::before {
-  content: url("../../public/caution.png"); /* caution.svgが存在すると仮定しています */
+  content: url("~/public/caution.png"); /* caution.svgが存在すると仮定しています */
 }
 
 /* 行間設定 */

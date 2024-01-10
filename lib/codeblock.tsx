@@ -1,5 +1,5 @@
 import parse, { HTMLReactParserOptions } from "html-react-parser";
-import CodeblockCopy from "../src/app/components/CodeblockCopy";
+import CodeblockCopy from "@/components/CodeblockCopy";
 import { ArticleProps } from "./type";
 
 const parseContent = ({ article }: ArticleProps) => {

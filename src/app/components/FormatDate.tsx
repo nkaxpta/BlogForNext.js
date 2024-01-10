@@ -1,7 +1,7 @@
 import { parseISO, format } from "date-fns";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import RefreshIcon from "@mui/icons-material/Refresh";
-import { DateProps } from "../../../lib/type";
+import { DateProps } from "~/lib/type";
 
 const FormatDate = ({ article, dateName }: DateProps) => {
   const transCreated: Date = parseISO(article.createdAt);

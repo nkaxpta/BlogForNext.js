@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { getRecentlyArticles } from "../../lib/client";
-import Categories from "./components/Categories";
-import FormatDate from "./components/FormatDate";
-import Profile from "./components/Profile";
+import { getRecentlyArticles } from "~/lib/client";
+import Categories from "@/components/Categories";
+import FormatDate from "@/components/FormatDate";
+import Profile from "@/components/Profile";
 
 const Home = async () => {
   const recentlyArticles = await getRecentlyArticles();

@@ -4,12 +4,12 @@ import {
   getArticleByCategoryAndPage,
   getNumberOfPagesByCategory,
   getCategoryName,
-} from "../../../../../../../lib/client";
-import BlogCategory from "@/app/components/BlogCategory";
-import { Pagination } from "@/app/components/Pagination";
-import { ArrayObject, Article } from "../../../../../../../lib/type";
-import Profile from "@/app/components/ProfileAside";
-import ArticleItem from "@/app/components/ArticleItem";
+} from "~/lib/client";
+import BlogCategory from "@/components/BlogCategory";
+import { Pagination } from "@/components/Pagination";
+import { ArrayObject, Article } from "~/lib/type";
+import Profile from "@/components/ProfileAside";
+import ArticleItem from "@/components/ArticleItem";
 
 // paramsの生成
 export const generateStaticParams = async () => {

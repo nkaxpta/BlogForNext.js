@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect } from "react";
-import parseContent from "../../../../../lib/codeblock";
-import FormatDate from "../../../components/FormatDate";
-import Categories from "@/app/components/Categories";
-import { ArticleProps } from "../../../../../lib/type";
+import parseContent from "~/lib/codeblock";
+import FormatDate from "@/components/FormatDate";
+import Categories from "@/components/Categories";
+import { ArticleProps } from "~/lib/type";
 
 const Article = ({ article }: ArticleProps) => {
   // console.log("ぱーす：%s", parse(article.content));

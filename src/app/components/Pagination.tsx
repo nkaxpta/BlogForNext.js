@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Pagination as MuiPagination, createTheme } from "@mui/material";
 import { ThemeProvider } from "@emotion/react";
-import { paginationProps } from "../../../lib/type";
+import { paginationProps } from "~/lib/type";
 
 const theme = createTheme({
   components: {

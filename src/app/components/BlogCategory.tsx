@@ -1,5 +1,5 @@
 import React from "react";
-import { getAllCategories } from "../../../lib/client";
+import { getAllCategories } from "~/lib/client";
 import Link from "next/link";
 
 const BlogCategory = async () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import SellIcon from "@mui/icons-material/Sell";
-import { ArticleProps } from "../../../lib/type";
+import { ArticleProps } from "~/lib/type";
 
 const Categories = ({ article }: ArticleProps) => {
   return (

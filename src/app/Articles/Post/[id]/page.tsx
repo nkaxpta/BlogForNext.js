@@ -1,11 +1,11 @@
 import Article from "./Article";
-import { getArticlesList, getDetailArticle } from "../../../../../lib/client";
-import { Back } from "@/app/components/Back";
-import BlogCategory from "@/app/components/BlogCategory";
-import Profile from "@/app/components/ProfileAside";
-import Outline from "@/app/components/Outline";
+import { getArticlesList, getDetailArticle } from "~/lib/client";
+import { Back } from "@/components/Back";
+import BlogCategory from "@/components/BlogCategory";
+import Profile from "@/components/ProfileAside";
+import Outline from "@/components/Outline";
 import { Metadata } from "next";
-import { Article as ArticleType } from "../../../../../lib/type";
+import { Article as ArticleType } from "~/lib/type";
 
 export const generateStaticParams = async () => {
   const { contents } = await getArticlesList();

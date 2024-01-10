@@ -9,7 +9,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 import { IconButton } from "@mui/material";
-import { CodeProps } from "../../../lib/type";
+import { CodeProps } from "~/lib/type";
 
 // SyntaxHighlighter.registerLanguage("bash", bash);
 // SyntaxHighlighter.registerLanguage("tsx", tsx);

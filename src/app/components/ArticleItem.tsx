@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArticleProps } from "../../../lib/type";
+import { ArticleProps } from "~/lib/type";
 import Categories from "./Categories";
 import FormatDate from "./FormatDate";
 
