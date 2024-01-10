@@ -25,6 +25,11 @@ const parseContent = ({ article }: ArticleProps) => {
       //   console.log("ちるどれん：%o", children[0]);
       // }
 
+      // microCMSでは埋め込みURL生成時にscriptタグを入れているが、それによりハイドレーションエラーが生じるため削除
+      if (name === "script" && attribs.src === "//cdn.iframe.ly/embed.js") {
+        return <></>;
+      }
+
       if (name === "div" && attribs["data-filename"]) {
         tempName = attribs["data-filename"];
       }
