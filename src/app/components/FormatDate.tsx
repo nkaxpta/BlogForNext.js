@@ -1,12 +1,13 @@
-import { parseISO, format } from "date-fns";
+import { format } from "date-fns";
+import { utcToZonedTime } from "date-fns-tz";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { DateProps } from "~/lib/type";
 
 const FormatDate = ({ article, dateName }: DateProps) => {
-  const transCreated: Date = parseISO(article.createdAt);
+  const transCreated: Date = utcToZonedTime(article.createdAt, "Asia/Tokyo");
   const formatCreated: string = format(transCreated, "MMMM dd, yyyy HH:mm");
-  const transUpdated: Date = parseISO(article.updatedAt);
+  const transUpdated: Date = utcToZonedTime(article.updatedAt, "Asia/Tokyo");
   const formatUpdated: string = format(transUpdated, "MMMM dd, yyyy HH:mm");
 
   if (dateName === "created") {
