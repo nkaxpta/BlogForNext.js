@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArticleProps } from "~/lib/type";
 import Categories from "./Categories";
 import FormatDate from "./FormatDate";
@@ -7,8 +8,10 @@ const ArticleItem = ({ article }: ArticleProps) => {
   return (
     <div className="bg-gray-100 rounded-lg p-3 justify-center">
       <Link href={`/Articles/Post/${article.id}`}>
-        <img
+        <Image
           src={article.thumbnail.url}
+          height={250}
+          width={650}
           alt=""
           className="thumbnail-img rounded-lg"
         />
