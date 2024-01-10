@@ -35,6 +35,14 @@ export const generateMetadata = async ({
       title: article.title,
       description: article.content.split("</h2><p>")[1].split("</p>")[0],
       url: `https://${process.env.BLOG_DOMAIN}/Articles/Post/${article.id}/`,
+      images: [
+        {
+          url: article.thumbnail.url,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
     },
   };
 };

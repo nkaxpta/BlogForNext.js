@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`bg-slate-200 ${NotoSansJP.className} `}>
-        <Script src="//cdn.iframe.ly/embed.js" strategy="afterInteractive" />
+        <Script src="//cdn.iframe.ly/embed.js" strategy="lazyOnload" />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow container pt-4 mx-auto">{children}</main>
