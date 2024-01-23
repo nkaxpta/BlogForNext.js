@@ -29,6 +29,22 @@ img {
   display: block;
 }
 
+figure img {
+  display: block;
+  margin: auto;
+  border-radius: 1%;
+  border: #cfcfcf 2px solid;
+}
+
+/* 画像のキャプション設定 */
+figcaption {
+  display: block;
+  font-size: 12px;
+  color: #898a8a;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 /* 見出しの設定 */
 h1 {
   font-size: 25px;
@@ -130,29 +146,27 @@ ol.toc-list {
 /* 引用の設定 */
 blockquote {
   position: relative;
-  padding: 10px 15px 10px 60px;
+  padding: 10px 15px 10px 30px;
   box-sizing: border-box;
   font-style: italic;
   background: #f5f5f5;
   color: #777777;
-  border-left: 4px solid #9dd4ff;
+  border-left: 4px solid #888888;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-blockquote:before {
+/* blockquote:before {
   display: inline-block;
   position: absolute;
   top: 15px;
-  left: 15px;
-  content: "e8dc";
-  font-family: "Material Icons Round";
+  left: 5px;
   color: #9dd4ff;
   font-size: 30px;
   line-height: 1;
   font-weight: 900;
-}
+} */
 
 blockquote p {
   padding: 0;
@@ -204,14 +218,6 @@ span.numbering::before {
   counter-increment: num;
   content: counter(num);
   text-align: center;
-}
-
-/* 画像のキャプション設定 */
-figcaption {
-  font-size: 12px;
-  color: #898a8a;
-  text-align: center;
-  padding-bottom: 10px;
 }
 
 /* ブログのコールアウト設定 */
