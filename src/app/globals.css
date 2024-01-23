@@ -350,7 +350,7 @@ a[target]:hover {
   text-decoration: underline;
 }
 
-[aria-label]:hover {
+/* [aria-label]:hover {
   background-color: #6d6d6d;
   transition-duration: 300ms;
-}
+} */
