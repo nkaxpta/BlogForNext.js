@@ -32,7 +32,7 @@ img {
 figure img {
   display: block;
   margin: auto;
-  border-radius: 1%;
+  border-radius: 5px;
   border: #cfcfcf 2px solid;
 }
 
