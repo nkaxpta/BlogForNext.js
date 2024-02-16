@@ -340,12 +340,13 @@ code span.linenumber {
 
 code:not([class]) {
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 4px;
   color: #494949;
   padding: 0 4px;
+  margin: 0 6px;
   display: inline;
   background-color: #dbdbdb;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 a[target] {
