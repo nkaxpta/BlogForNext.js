@@ -1,1 +1,1 @@
-export const NUMBER_OF_ARTICLES_PER_PAGE: number = 3;
+export const NUMBER_OF_ARTICLES_PER_PAGE: number = 10;

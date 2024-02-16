@@ -16,14 +16,14 @@ const Home = async () => {
         </h1>
       </div>
       <div className="flex justify-center">
-        <div className="mb-32 text-sm text-gray-400">
+        <div className="text-sm text-gray-400">
           <Profile nameCenter={true} />
         </div>
       </div>
       <main>
         <div className="flex my-8 sm:w-auto md:w-2/3 lg:w-1/2 xl:w-5/12 mx-auto">
           <div className="flex-grow">
-            <h2 className="text-2xl my-8">Recently Articles</h2>
+            <h2 className="text-2xl my-8">📝Recently Articles</h2>
             <article className="grid grid-cols-1 gap-10">
               {recentlyArticles.map((article) => (
                 <div className="bg-gray-100 rounded-lg p-3" key={article.id}>
@@ -39,6 +39,12 @@ const Home = async () => {
                 </div>
               ))}
             </article>
+            <Link
+              href="/Articles/page/1"
+              className="hover:text-blue-600 hover:underline duration-150 flex items-center justify-center"
+            >
+              <h2 className="text-2xl mt-16 inline">🚀All Post</h2>
+            </Link>
           </div>
         </div>
       </main>
