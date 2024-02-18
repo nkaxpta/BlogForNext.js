@@ -39,12 +39,14 @@ const Home = async () => {
                 </div>
               ))}
             </article>
-            <Link
-              href="/Articles/page/1"
-              className="hover:text-blue-600 hover:underline duration-150 flex items-center justify-center"
-            >
-              <h2 className="text-2xl mt-16 inline">🚀All Post</h2>
-            </Link>
+            <h2 className="text-2xl mt-16 flex items-center justify-center">
+              <Link
+                href="/Articles/page/1"
+                className="hover:text-blue-600 hover:underline duration-150 inline"
+              >
+                🚀All Post
+              </Link>
+            </h2>
           </div>
         </div>
       </main>

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Noto_Sans_JP } from "next/font/google";
+import { Outfit } from "next/font/google";
 import Script from "next/script";
 
-const NotoSansJP = Noto_Sans_JP({
-  weight: ["400", "700"],
-  // weight: "300",
+const googleFont = Outfit({
+  weight: ["200", "600"],
+  // weight: "400",
   preload: true,
   subsets: ["latin"],
 });
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={`bg-slate-200 ${NotoSansJP.className} `}>
+      <body className={`bg-slate-200 ${googleFont.className} `}>
         <Script src="//cdn.iframe.ly/embed.js" strategy="lazyOnload" />
         <div className="flex flex-col min-h-screen">
           <Header />
