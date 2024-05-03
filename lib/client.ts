@@ -193,7 +193,7 @@ export const getRecentlyArticles = async () => {
   const size: number = 3;
   const recentlyArticles: Article[] = articleArr
     .sort((article1, article2) => {
-      return article1.createdAt > article2.createdAt ? -1 : 1;
+      return article1.publishedAt > article2.publishedAt ? -1 : 1;
     })
     .slice(0, size);
 
