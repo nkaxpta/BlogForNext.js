@@ -4,8 +4,8 @@ const zArticle = z.object({
   id: z.string(),
   title: z.string(),
   content: z.string(),
-  createdAt: z.string().datetime(),
-  updatedAt: z.string().datetime(),
+  publishedAt: z.string().datetime(),
+  revisedAt: z.string().datetime(),
   categories: z.array(z.string()),
   thumbnail: z.object({
     url: z.string().url(),
