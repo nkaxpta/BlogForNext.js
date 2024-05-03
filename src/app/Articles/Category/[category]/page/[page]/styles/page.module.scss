@@ -1,0 +1,19 @@
+/* サイドバーの設定 */
+.aside {
+  position: sticky;
+  top: 4rem;
+
+  h3 {
+    font-size: 18px;
+    // font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    // border-bottom: 1px dashed #000;
+    padding-left: 10px;
+    // padding-bottom: 5px;
+    // margin-top: 10px;
+    // margin-bottom: 10px;
+  }
+}

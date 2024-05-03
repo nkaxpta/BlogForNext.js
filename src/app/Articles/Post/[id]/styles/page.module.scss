@@ -1,0 +1,55 @@
+/* サイドバーの設定 */
+.aside {
+  position: sticky;
+  top: 4rem;
+
+  h3 {
+    font-size: 18px;
+    // font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    // border-bottom: 1px dashed #000;
+    padding-left: 10px;
+    // padding-bottom: 5px;
+    // margin-top: 10px;
+    // margin-bottom: 10px;
+  }
+
+  // 目次の設定
+  :global {
+    ol.toc-list {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .toc {
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+    }
+
+    .toc-list .toc-list {
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .toc-list-item {
+      padding-bottom: 0rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    .toc-link {
+      color: rgba(156, 163, 175, 0.7);
+    }
+
+    .is-active-link {
+      color: #282828;
+      font-weight: 700;
+    }
+  }
+  // 目次の設定ここまで
+}

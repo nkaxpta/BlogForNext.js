@@ -7,7 +7,7 @@ const parseContent = ({ article }: ArticleProps) => {
   let tempName: string;
 
   const options: HTMLReactParserOptions = {
-    replace: ({ attribs, children, name, parent }: any) => {
+    replace: ({ attribs, children, name }: any) => {
       if (!attribs || Object.keys(attribs).length === 0) return;
 
       // attribsはhtmlタグ内の後ろにある属性をオブジェクト形式で保持している
@@ -19,11 +19,6 @@ const parseContent = ({ article }: ArticleProps) => {
       // childrenは各htmlタグの値をオブジェクトとして取得している
       // htmlタグに挟まれた文章はchildren[0].dataに格納されている
       // console.log("ちるどれん：%o", children[0]?.data);
-
-      // if (attribs.class === "iframely-responsive") {
-      //   console.log("ぺあれんと：%o", parent);
-      //   console.log("ちるどれん：%o", children[0]);
-      // }
 
       // microCMSでは埋め込みURL生成時にscriptタグを入れているが、それによりハイドレーションエラーが生じるため削除
       if (name === "script" && attribs.src === "//cdn.iframe.ly/embed.js") {

@@ -12,16 +12,18 @@ const FormatDate = ({ article, dateName }: DateProps) => {
 
   if (dateName === "created") {
     return (
-      <div className="flex justify-end text-gray-500">
-        <ScheduleIcon fontSize="small" />
-        <span className="text-right text-xs w-36">{formatCreated}</span>
+      <div className="flex justify-end text-gray-500 text-right text-xs">
+        <span>
+          <ScheduleIcon fontSize="small" /> {formatCreated}
+        </span>
       </div>
     );
   } else if (dateName === "updated" && formatCreated !== formatUpdated) {
     return (
-      <div className="flex justify-end text-gray-500">
-        <RefreshIcon fontSize="small" />
-        <span className="text-right text-xs w-36">{formatUpdated}</span>
+      <div className="flex justify-end text-gray-500 text-right text-xs">
+        <span>
+          <RefreshIcon fontSize="small" /> {formatUpdated}
+        </span>
       </div>
     );
   } else if (dateName === "updated" && formatCreated === formatUpdated) {

@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import ArticleItem from "@/components/ArticleItem";
 import { Article } from "~/lib/type";
 
+import styles from "./styles/page.module.scss";
+
 export const metadata: Metadata = {
   title: "All Posts",
 };
@@ -48,7 +50,9 @@ const blogPageList = async ({ params }: { params: { page: number } }) => {
       </div>
       <div className="w-full md:w-1/3 flex flex-col px-3 lg:pl-6">
         <Profile />
-        <BlogCategory />
+        <div className={styles.aside}>
+          <BlogCategory />
+        </div>
       </div>
     </div>
   );

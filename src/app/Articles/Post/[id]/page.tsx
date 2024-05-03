@@ -7,6 +7,8 @@ import Outline from "@/components/Outline";
 import { Metadata } from "next";
 import { Article as ArticleType } from "~/lib/type";
 
+import styles from "./styles/page.module.scss";
+
 export const generateStaticParams = async () => {
   const { contents } = await getArticlesList();
 
@@ -74,7 +76,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
       </div>
       <div className="w-full md:w-1/3 flex flex-col px-3 lg:pl-6">
         <Profile />
-        <div className="sticky top-16">
+        <div className={styles.aside}>
           {/* 目次に該当するタグが存在する場合のみ目次欄を表示 */}
           {isIncludes(outlineWords, article.content) && <Outline />}
           <BlogCategory />

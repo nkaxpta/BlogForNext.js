@@ -11,6 +11,8 @@ import { ArrayObject, Article } from "~/lib/type";
 import Profile from "@/components/ProfileAside";
 import ArticleItem from "@/components/ArticleItem";
 
+import styles from "./styles/page.module.scss";
+
 // paramsの生成
 export const generateStaticParams = async () => {
   const categoryObj = await getAllCategories();
@@ -98,7 +100,9 @@ const blogCategoryPageList = async ({
       </div>
       <div className="w-full md:w-1/3 flex flex-col px-3 lg:pl-6">
         <Profile />
-        <BlogCategory />
+        <div className={styles.aside}>
+          <BlogCategory />
+        </div>
       </div>
     </div>
   );

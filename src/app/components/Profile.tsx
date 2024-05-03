@@ -13,7 +13,8 @@ const Profile = ({ nameCenter }: { nameCenter: boolean }) => {
           一念発起してITエンジニア(インフラ)に <br />
           このブログは駆け出しインフラエンジニアとしての学習の記録(のつもり)です。
           <br />
-          AWS CLF / SAA / SOA / DVA / SAP / DOP 取得 軽度のスバリスト
+          AWS CLF / SAA / SOA / DVA / SAP / DOP / SCS / PAS 取得
+          軽度のスバリスト
         </>
       ) : (
         <>
@@ -27,7 +28,7 @@ const Profile = ({ nameCenter }: { nameCenter: boolean }) => {
           <br />
           このブログは駆け出しインフラエンジニアとしての学習の記録(のつもり)です。
           <br />
-          AWS CLF / SAA / SOA / DVA / SAP / DOP 取得
+          AWS CLF / SAA / SOA / DVA / SAP / DOP / SCS / PAS 取得
           <br />
           <br />
           軽度のスバリスト

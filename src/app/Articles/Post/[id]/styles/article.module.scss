@@ -1,0 +1,216 @@
+@mixin index($size, $weight: 600, $height: 1) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+.main {
+  // 見出しの設定
+  h1 {
+    @include index($size: 25);
+  }
+
+  h2 {
+    @include index($size: 22);
+    border-bottom: 2px solid #bbbaba;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  h3 {
+    @include index($size: 18);
+    padding-left: 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    border-left: 3px solid rgb(77, 136, 192);
+  }
+
+  h4 {
+    @include index($size: 14);
+  }
+
+  h5 {
+    @include index($size: 12, $height: 0.2);
+  }
+  // 見出しの設定ここまで
+
+  // リストの設定
+  ol {
+    li {
+      list-style-type: none;
+      counter-increment: cnt;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      &::before {
+        content: counter(cnt) ". ";
+      }
+    }
+  }
+
+  li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 19px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  // リストの設定ここまで
+
+  // 引用の設定
+  blockquote {
+    position: relative;
+    padding: 10px 15px 10px 30px;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #f5f5f5;
+    color: #777777;
+    border-left: 4px solid #888888;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    p {
+      padding: 0;
+      margin: 4px 0;
+      line-height: 1.7;
+    }
+
+    cite {
+      display: block;
+      text-align: right;
+      color: #888888;
+      font-size: 0.9em;
+    }
+  }
+  // 引用の設定ここまで
+
+  // テーブルの設定
+  table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    counter-reset: num;
+  }
+
+  th,
+  td {
+    min-width: 50px;
+    max-width: 28rem;
+    border: 1px solid #686767;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (max-width: 1300px) {
+    th,
+    td {
+      max-width: 100px;
+      border: 1px solid #686767;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  th {
+    background-color: #dadada;
+  }
+
+  :global {
+    .numbering::before {
+      counter-increment: num;
+      content: counter(num);
+      text-align: center;
+    }
+  }
+  // テーブルの設定ここまで
+
+  // ブログのコールアウト設定
+  :global {
+    span.callout {
+      display: flex;
+      align-items: flex-start;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 16px;
+
+      &::before {
+        position: relative;
+        top: -4px;
+        transform: scale(0.6);
+      }
+
+      &.information {
+        background-color: #a7c8e4;
+        &::before {
+          content: url("~/public/information.png");
+        }
+      }
+
+      &.memo {
+        background-color: #9ef5a5;
+        &::before {
+          content: url("~/public/memo.png");
+        }
+      }
+
+      &.caution {
+        background-color: #fffd7b;
+        &::before {
+          content: url("~/public/caution.png");
+        }
+      }
+    }
+  }
+  // コールアウト設定ここまで
+
+  // コードブロック・コード部設定
+  :global {
+    code {
+      span.linenumber {
+        border-right: 1px solid #999;
+        display: block;
+        margin-right: 10px;
+        color: #7c7a7a !important;
+      }
+
+      &:not([class]) {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #494949;
+        padding: 0 4px;
+        margin: 0 6px;
+        display: inline;
+        background-color: #dbdbdb;
+        font-size: 13px;
+      }
+    }
+  }
+  // コードブロック・コード部設定ここまで
+
+  // 画像のキャプション設定
+  figure {
+    img {
+      display: block;
+      margin: auto;
+      border-radius: 5px;
+      border: #cfcfcf 2px solid;
+    }
+  }
+
+  figcaption {
+    display: block;
+    font-size: 12px;
+    color: #898a8a;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  // 画像のキャプション設定ここまで
+}
