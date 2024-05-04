@@ -4,21 +4,28 @@
   line-height: $height;
 }
 
+@mixin callout($color, $url) {
+  background-color: $color;
+  &::before {
+    content: url($url);
+  }
+}
+
 .main {
   // 見出しの設定
   h1 {
-    @include index($size: 25);
+    @include index($size: 25px);
   }
 
   h2 {
-    @include index($size: 22);
+    @include index($size: 22px);
     border-bottom: 2px solid #bbbaba;
     padding-top: 20px;
     padding-bottom: 10px;
   }
 
   h3 {
-    @include index($size: 18);
+    @include index($size: 18px);
     padding-left: 1rem;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -27,11 +34,11 @@
   }
 
   h4 {
-    @include index($size: 14);
+    @include index($size: 14px);
   }
 
   h5 {
-    @include index($size: 12, $height: 0.2);
+    @include index($size: 12px, $height: 0.2);
   }
   // 見出しの設定ここまで
 
@@ -148,24 +155,15 @@
       }
 
       &.information {
-        background-color: #a7c8e4;
-        &::before {
-          content: url("~/public/information.png");
-        }
+        @include callout(#a7c8e4, "~/public/information.png");
       }
 
       &.memo {
-        background-color: #9ef5a5;
-        &::before {
-          content: url("~/public/memo.png");
-        }
+        @include callout(#9ef5a5, "~/public/memo.png");
       }
 
       &.caution {
-        background-color: #fffd7b;
-        &::before {
-          content: url("~/public/caution.png");
-        }
+        @include callout(#fffd7b, "~/public/caution.png");
       }
     }
   }
