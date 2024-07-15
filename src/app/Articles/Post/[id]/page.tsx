@@ -39,7 +39,7 @@ export const generateMetadata = async ({
       url: `https://${process.env.BLOG_DOMAIN}/Articles/Post/${article.id}/`,
       images: [
         {
-          url: article.thumbnail.url,
+          url: `https://${process.env.BLOG_DOMAIN}/Articles/Post/${article.id}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: article.title,

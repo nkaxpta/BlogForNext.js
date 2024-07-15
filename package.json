@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "debag": "cross-env NODE_OPTIONS='--inspect' next dev"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -14,11 +15,12 @@
     "@mui/icons-material": "^5.14.15",
     "@mui/material": "^5.14.15",
     "@types/react-syntax-highlighter": "^15.5.9",
+    "cross-env": "^7.0.3",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "html-react-parser": "^4.2.7",
     "microcms-js-sdk": "^2.7.0",
-    "next": "^13.5.6",
+    "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "react-syntax-highlighter": "^15.5.0",
