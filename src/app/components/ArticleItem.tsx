@@ -16,9 +16,9 @@ const ArticleItem = ({ article }: ArticleProps) => {
           alt=""
           className="thumbnail-img rounded-lg"
         />
-        <h1 className=" hover:underline text-xl md:text-x1 mb-3 font-semibold text-center border-b-2">
+        {/* <h1 className=" hover:underline text-xl md:text-x1 mb-3 font-semibold text-center border-b-2">
           {article.title}
-        </h1>
+        </h1> */}
       </Link>
       <Categories article={article} />
       <FormatDate article={article} dateName="published" />
