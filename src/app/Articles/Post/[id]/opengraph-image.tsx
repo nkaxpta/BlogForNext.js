@@ -1,8 +1,9 @@
 import { ImageResponse } from "next/og";
 import { Article as ArticleType } from "~/lib/type";
 import { getDetailArticle, getArticlesList } from "~/lib/client";
+import { BLOG_TITLE } from "~/constants/constants";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 export const size = {
   width: 1200,
   height: 630,
@@ -11,10 +12,18 @@ export const contentType = "image/png";
 // export const dynamic = "force-dynamic";
 // export const dynamicParams = true;
 
+export const generateStaticParams = async () => {
+  const { contents } = await getArticlesList();
+
+  return contents.map((article: ArticleType) => ({
+    id: article.id,
+  }));
+};
+
 export default async function Image({ params }: { params: { id: string } }) {
   const article: ArticleType = await getDetailArticle(params.id);
 
-  // console.log(article.title);
+  console.log(article.title);
 
   return new ImageResponse(
     (
@@ -42,8 +51,8 @@ export default async function Image({ params }: { params: { id: string } }) {
             height: "90%",
           }}
         >
-          <p style={{ fontSize: 60, fontWeight: 700 }}>{article.title}</p>
-          <p style={{ fontSize: 40, fontWeight: 500 }}>test Blog</p>
+          <p style={{ fontSize: 55, fontWeight: 700 }}>{article.title}</p>
+          <p style={{ fontSize: 30, fontWeight: 500 }}>✏{BLOG_TITLE}</p>
         </div>
       </div>
     ),

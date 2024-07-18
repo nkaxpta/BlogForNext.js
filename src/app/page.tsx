@@ -3,6 +3,7 @@ import { getRecentlyArticles } from "~/lib/client";
 import Categories from "@/components/Categories";
 import FormatDate from "@/components/FormatDate";
 import Profile from "@/components/Profile";
+import { BLOG_TITLE } from "~/constants/constants";
 
 const Home = async () => {
   const recentlyArticles = await getRecentlyArticles();
@@ -11,9 +12,7 @@ const Home = async () => {
   return (
     <div className="justify-center mt-24">
       <div className="text-center">
-        <h1 className="font-medium text-4xl mb-4">
-          エンジニアになった元数学教師の記録
-        </h1>
+        <h1 className="font-medium text-4xl mb-4">{BLOG_TITLE}</h1>
       </div>
       <div className="flex justify-center">
         <div className="text-sm text-gray-400">

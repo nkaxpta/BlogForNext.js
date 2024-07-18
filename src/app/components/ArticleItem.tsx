@@ -3,13 +3,14 @@ import Image from "next/image";
 import { ArticleProps } from "~/lib/type";
 import Categories from "./Categories";
 import FormatDate from "./FormatDate";
+import { OG_IMAGE_DIR_URL } from "~/constants/constants";
 
 const ArticleItem = ({ article }: ArticleProps) => {
   return (
     <div className="bg-gray-100 rounded-lg p-3 justify-center">
       <Link href={`/Articles/Post/${article.id}`}>
         <Image
-          src={article.thumbnail.url}
+          src={`${OG_IMAGE_DIR_URL}/${article.id}.png`}
           height={250}
           width={650}
           alt=""
