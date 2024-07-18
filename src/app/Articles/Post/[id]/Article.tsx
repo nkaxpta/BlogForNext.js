@@ -30,6 +30,7 @@ const Article = ({ article }: ArticleProps) => {
         {article.title}
       </h1>
       <Categories article={article} />
+      <span className="p-1"></span>
       <FormatDate article={article} dateName="published" />
       <FormatDate article={article} dateName="revised" />
       <div className={styles.main}>{contentWithCodeBlocks}</div>

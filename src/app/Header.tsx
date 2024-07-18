@@ -4,7 +4,7 @@ import { BLOG_TITLE } from "~/constants/constants";
 
 const Header = () => {
   return (
-    <div className="sticky top-0">
+    <div className="sticky top-0 z-50">
       <header className="flex justify-between items-center py-3 px-10 border-b-2 bg-gray-300 bg-opacity-50">
         <h1 className="text-lg">
           <Link href="/">{BLOG_TITLE}</Link>

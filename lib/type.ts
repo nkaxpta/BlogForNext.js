@@ -7,9 +7,6 @@ const zArticle = z.object({
   publishedAt: z.string().datetime(),
   revisedAt: z.string().datetime(),
   categories: z.array(z.string()),
-  thumbnail: z.object({
-    url: z.string().url(),
-  }),
 });
 
 export type Article = z.infer<typeof zArticle>;

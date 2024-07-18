@@ -4,10 +4,12 @@ import Categories from "@/components/Categories";
 import FormatDate from "@/components/FormatDate";
 import Profile from "@/components/Profile";
 import { BLOG_TITLE } from "~/constants/constants";
+import ArticleItem from "./components/ArticleItem";
+import { Article } from "~/lib/type";
 
 const Home = async () => {
-  const recentlyArticles = await getRecentlyArticles();
-  // console.log(recentlyArticles);
+  const recentlyArticles: Article[] = await getRecentlyArticles();
+  console.log(recentlyArticles);
 
   return (
     <div className="justify-center mt-24">
@@ -24,18 +26,19 @@ const Home = async () => {
           <div className="flex-grow">
             <h2 className="text-2xl my-8">📝Recently Articles</h2>
             <article className="grid grid-cols-1 gap-10">
-              {recentlyArticles.map((article) => (
-                <div className="bg-gray-100 rounded-lg p-3" key={article.id}>
-                  <Link href={`/Articles/Post/${article.id}`}>
-                    <h1 className=" hover:underline text-xl md:text-x1 mb-3 font-semibold border-b-2">
-                      {article.title}
-                    </h1>
-                  </Link>
-                  <Categories article={article} />
-                  <span className="text-center">
-                    <FormatDate article={article} dateName="created" />
-                  </span>
-                </div>
+              {recentlyArticles.map((article: Article) => (
+                // <div className="bg-gray-100 rounded-lg p-3" key={article.id}>
+                //   <Link href={`/Articles/Post/${article.id}`}>
+                //     <h1 className=" hover:underline text-xl md:text-x1 mb-3 font-semibold border-b-2">
+                //       {article.title}
+                //     </h1>
+                //   </Link>
+                //   <Categories article={article} />
+                //   <span className="text-center">
+                //     <FormatDate article={article} dateName="created" />
+                //   </span>
+                // </div>
+                <ArticleItem key={article.id} article={article} />
               ))}
             </article>
             <h2 className="text-2xl mt-16 flex items-center justify-center">
