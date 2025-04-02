@@ -8,6 +8,7 @@ import { Metadata } from "next";
 import { Article as ArticleType } from "~/lib/type";
 
 import styles from "./styles/page.module.scss";
+import { OG_IMAGE_DIR_URL } from "~/constants/constants";
 
 export const generateStaticParams = async () => {
   const { contents } = await getArticlesList();
@@ -39,7 +40,7 @@ export const generateMetadata = async ({
       url: `https://${process.env.BLOG_DOMAIN}/Articles/Post/${article.id}/`,
       images: [
         {
-          url: article.thumbnail.url,
+          url: `${OG_IMAGE_DIR_URL}/${article.id}.png`,
           width: 1200,
           height: 630,
           alt: article.title,

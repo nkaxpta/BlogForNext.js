@@ -12,6 +12,9 @@ phases:
       - echo "NEXT_PUBLIC_SERVICE_DOMAIN=${NEXT_PUBLIC_SERVICE_DOMAIN}" >> .env
       - echo "NEXT_PUBLIC_API_KEY=${NEXT_PUBLIC_API_KEY}" >> .env
       - echo "BLOG_DOMAIN=${BLOG_DOMAIN}" >> .env
+      - echo "BLOG_TITLE=${BLOG_TITLE} >> .env"
+      - echo "OG_IMAGE_DIR_URL=${OG_IMAGE_DIR_URL} >> .env"
+      - echo "S3_SOURCE_BUCKET_URL=${S3_SOURCE_BUCKET_URL} >> .env"
       # - less .env
   build:
     commands:
@@ -24,7 +27,8 @@ phases:
       - aws s3 rm "s3://${S3_SOURCE_BUCKET_NAME}" --recursive
       - echo create invalidation
       - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'
-      # - ls ./out/
+      - pwd ; ls -la
+      - ls ./out/
       - echo post_build completed
 artifacts:
   files:
